@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    align-items: center;
+    padding: 5px auto;
+    border-bottom: 1px solid rgb(241, 241, 241);
+    height: 80px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+}
+
+.logo {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.search {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.searchcontent {
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    box-shadow: 0 1px 2px 0 rgba(128, 127, 127, 0.2), 0 1px 5px 0 rgba(158, 158, 158, 0.19);
+}
+
+.searchcontent:hover,
+.navIcons:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 10px 0 rgba(128, 127, 127, 0.2), 0 3px 10px 0 rgba(158, 158, 158, 0.19);
+}
+
+.search .searchcontent span {
+    font-weight: bold;
+    font-size: 13px;
+    padding: 3px 10px;
+}
+
+.search .searchcontent span:nth-child(1) {
+    border-right: 1px solid rgb(230, 230, 230);
+}
+
+.search .searchcontent span:nth-child(2) {
+    border-right: 1px solid rgb(230, 230, 230);
+}
+
+.search .searchcontent span:nth-child(3) {
+    color: rgba(105, 105, 105, 0.76);
+}
+
+.search .searchcontent .searchIcon {
+    border: 1px solid #ff385c;
+    background: #ff385c;
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.signIn {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.signInContent {
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 10px;
+    border: none;
+    float: right;
+    margin-left: 60px;
+}
+
+.navIcons {
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    box-shadow: 0 1px 2px 0 rgba(128, 127, 127, 0.2), 0 1px 5px 0 rgba(158, 158, 158, 0.19);
+}
+
+.signIn .signInContent p {
+    text-transform: capitalize;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 50px;
+    margin-bottom: 0;
+}
+
+.signIn .signInContent p:hover,
+.languageIconContainer:hover {
+    background: rgba(221, 221, 221, 0.2);
+    cursor: pointer;
+}
+
+.languageIconContainer {
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ///////////////////////////////////// Small Screen Design //////////////////////////////// */
+
+.searchSmallScreen {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    z-index: 1000;
+}
+
+.searchcontentSmallScreen {
+    border: 1px solid lightgray;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    box-shadow: 0 1px 2px 0 rgba(128, 127, 127, 0.2), 0 1px 5px 0 rgba(158, 158, 158, 0.19);
+}
+
+.searchIconSmallScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.ContainerSmallScreen {
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+}
+
+.ContainerSmallScreen .whereTo {
+    font-weight: bold;
+}
+
+.sliderIcon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 2px;
+    border: 1px solid rgba(128, 127, 127, 0.2);
+    float: right;
+    margin-left: 20px;
+}
+
+.settingIcon {
+    width: 100%;
+    float: right;
+}
+
+.spanDivs {
+    display: flex;
+}
+
+.spanDivs i {
+    padding: 1px;
+    font-size: 2px;
+    color: rgba(128, 127, 127, 0.2);
+    margin: 0 10px;
+}
+
+
+@media only screen and (max-width: 425px) {
+    .spanDivs .changeTextOne,
+    .changeTextTwo,
+    .changeTextThree
+    {
+        text-indent: -9999px;
+        line-height: 0;
+    }
+
+    .spanDivs .changeTextOne::after {
+        content: "Any wh..";
+        text-indent: 0;
+        display: block;
+        line-height: initial;
+        font-size: 11.5px;
+    }
+    .spanDivs .changeTextTwo::after {
+        content: "Any we..";
+        text-indent: 0;
+        display: block;
+        line-height: initial;
+        font-size: 11.5px;
+
+    }
+    .spanDivs .changeTextThree::after {
+        content: "Any gu..";
+        text-indent: 0;
+        display: block;
+        line-height: initial;
+        font-size: 11.5px;
+
+    }
+
+}
+
+@media only screen and (min-width: 426px) and (max-width: 767px) {
+    .spanDivs .changeTextOne,
+    .changeTextTwo,
+    .changeTextThree
+    {
+        text-indent: -9999px;
+        line-height: 0;
+    }
+
+    .spanDivs .changeTextOne::after {
+        content: "Any where";
+        text-indent: 0;
+        display: block;
+        line-height: initial;
+        font-size: 13px;
+    }
+    .spanDivs .changeTextTwo::after {
+        content: "Any week";
+        text-indent: 0;
+        display: block;
+        line-height: initial;
+        font-size: 13x;
+
+    }
+    .spanDivs .changeTextThree::after {
+        content: "Any guest";
+        text-indent: 0;
+        display: block;
+        line-height: initial;
+        font-size: 13px;
+
+    }
+  
+}
+
+@media  only screen and (min-width: 692px) and (max-width: 830px) {
+    .ContainerSmallScreen{
+        padding-right: 260px;
+        }
+}
+
+
+@media only screen and (min-width: 430px) and (max-width: 768px) {
+    .searchcontentSmallScreen {
+        display: flex;
+    }
+
+    .spanDivs span {
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .searchSmallScreen {
+        position: fixed;
+        top: 0;
+    }
+}
+
+@media only screen and (min-width: 830px) {
+    .navbarSmallScreen {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 829px) {
+    .navbar {
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width: 767px) and (max-width: 1000px) {
+    .logo {
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1236px) {
+    .signIn .signInContent p {
+        width: 150px;
+    }
+}

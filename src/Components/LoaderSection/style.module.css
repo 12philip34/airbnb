@@ -1,0 +1,19 @@
+.loaderStyles{
+    background-Color: #eee;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.loaderswipeStyles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background:linear-gradient(to right, #eeeeee 10%, #dddddd 50%, #eeeeee 90%);
+    height: 100%;
+}
+
+.loaderStyles .loaderswipeStyles h1{
+    color: rebeccapurple;
+}
