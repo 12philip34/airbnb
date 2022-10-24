@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./style.module.css";
 import Logo from "../../Images/airbnb.png";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -6,7 +6,16 @@ import LanguageIcon from '@mui/icons-material/Language';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SearchIcon from '@mui/icons-material/Search';
 import Settings from "../../Images/setting.png";
+import LoaderSection from '../LoaderSection';
+
 const Navbar = () => {
+
+    const [loading, setLoading] = useState(false);
+
+    setTimeout(() => {
+        setLoading(true);
+    }, 1000)
+
     return (
         <div>
             <section className={styles.navbar}>
@@ -15,9 +24,12 @@ const Navbar = () => {
                 </div>
                 <div className={styles.search}>
                     <div className={styles.searchcontent}>
-                        <span>Anywhere</span>
-                        <span>Any week</span>
-                        <span>Any guests</span>
+                        {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', marginTop: '10px', width: '100px' }} />}
+                        {loading && <span>Anywhere</span>}
+                        {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', marginTop: '10px', width: '100px' }} />}
+                        {loading && <span>Any week</span>}
+                        {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', marginTop: '10px', width: '100px' }} />}
+                        {loading && <span>Any guests</span>}
                         <div className={styles.searchIcon}>
                             <SearchIcon />
                         </div>
@@ -25,7 +37,8 @@ const Navbar = () => {
                 </div>
                 <div className={styles.signIn}>
                     <div className={styles.signInContent}>
-                        <p>become a host</p>
+                    {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', marginTop: '10px', width: '100px' }} />}
+                        {loading && <p>become a host</p>}
                         <div className={styles.languageIconContainer}>
                             <LanguageIcon />
                         </div>

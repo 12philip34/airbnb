@@ -45,7 +45,7 @@ const Card = (props) => {
                         <span className={styles.spanThree}></span>
                         <span className={styles.spanFour}></span>
                     </label>
-                    <ArrowCircleRightTwoToneIcon style={rightArrow} />
+                    <ArrowCircleRightTwoToneIcon style={rightArrow} className={styles.ArrowCircleRightTwoToneIcon} />
                 </div>
                 <div className={styles.cardTextBox}>
                     <div className={styles.content}>
@@ -60,12 +60,12 @@ const Card = (props) => {
                     <div className={styles.contentTwo}>
                         {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', marginTop: '10px', width: '200px' }} />}
                         {loading && <p>{props.location}</p>}
-                        {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', marginTop: '20px', width: '100px' }} />}
+                        {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', marginTop: '10px', width: '100px' }} />}
                         {loading && <p>{props.date}</p>}
                         <div className={styles.lastCardContent}>
                             {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', width: '50px' }} />}
                             {loading && <h3 className={styles.textRating}>{props.price}</h3>}
-                            {!loading && <LoaderSection extraStyles={{ height: '20px', marginLeft: '30px', marginTop: '20px', width: '50px' }} />}
+                            {!loading && <LoaderSection extraStyles={{ height: '20px', marginLeft: '30px', marginTop: '10px', width: '50px' }} />}
                             {loading && <p className={styles.season}>{props.season}</p>}
                         </div>
                     </div>

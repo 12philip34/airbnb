@@ -1,18 +1,28 @@
 .cards{
     overflow: hidden;
+    margin: 20px 0;
 }
 
 
 .cards .cardImageBox{
     height: 250px;
     position: relative;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
-.cards:hover{
-   cursor: pointer;
+
+.cards:hover .ArrowCircleRightTwoToneIcon{
+  opacity: 1;
 }
+
+.ArrowCircleRightTwoToneIcon{
+    opacity: 0;
+}
+
+.cards:hover {
+    cursor: pointer;
+ }
 
 .cards .cardImageBox img{
     width: 100%;
@@ -55,10 +65,10 @@
 }
 
 .contentTwo p{
-    color: rgb(39, 39, 39);
+    color: #24262b;
     padding: 3px 0;
     font-size: 15px;
-    
+    margin-bottom: 1px;
 }
 
 .lastCardContent{
