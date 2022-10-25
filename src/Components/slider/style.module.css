@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700&display=swap');
+
+body {
+    margin: 0;
+    height: calc(100vh - 8em);
+    font-family: 'Muli', sans-serif;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    margin: 4em;
+}
+
+.container {
+    position: fixed;
+    top: 80px;
+    z-index: 1000;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    animation: carouselAnim 300s infinite alternate linear;
+
+}
+
+.entry {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 150px;
+    background: white;
+    margin: 1em;
+    padding: .5em;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.05);
+}
+
+.entry:hover,
+.filteredDiv
+{
+    cursor: pointer;
+}
+.entry h3{
+    text-transform: capitalize;
+    color: #333;
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+p {
+    text-align: center;
+    padding: 1em;
+}
+
+p.name {
+    font-weight: bold;
+}
+
+.filteredDiv{
+    position: fixed;
+    z-index: 1000;
+    top: 100px;
+    right: 50px;
+    display: flex;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(212, 210, 210);
+}
+
+.filteredDiv h3{
+    margin-top: 0;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+@keyframes carouselAnim {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(calc(-100% + (5*300px)));
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .items {
+        animation: carouselAnim 30s infinite alternate linear;
+    }
+    .filteredDiv{
+        top: 95px;
+        right: 10px;
+    }
+
+@keyframes carouselAnim {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(calc(-100% + (2*300px)));
+    }
+}
+}
+
+.faders {
+width: 100%;
+position: absolute;
+height: 100%;
+
+
+}
+.left,
+.right {
+    background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    z-index: 200;
+    backdrop-filter: 0;
+}
+
+
+
+.right {
+    right: 0;
+    background: linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}

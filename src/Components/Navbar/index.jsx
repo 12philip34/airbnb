@@ -7,6 +7,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SearchIcon from '@mui/icons-material/Search';
 import Settings from "../../Images/setting.png";
 import LoaderSection from '../LoaderSection';
+import Slider from '../slider';
 
 const Navbar = () => {
 
@@ -20,7 +21,8 @@ const Navbar = () => {
         <div>
             <section className={styles.navbar}>
                 <div className={styles.logo}>
-                    <img src={Logo} alt="Logo.png" />
+                    {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', width: '100px', marginRight: '10px' }} />}
+                    {loading && <img src={Logo} alt="Logo.png" />}
                 </div>
                 <div className={styles.search}>
                     <div className={styles.searchcontent}>
@@ -30,21 +32,25 @@ const Navbar = () => {
                         {loading && <span>Any week</span>}
                         {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', marginTop: '10px', width: '100px' }} />}
                         {loading && <span>Any guests</span>}
-                        <div className={styles.searchIcon}>
+                        {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', width: '40px', marginTop: '7px' }} />}
+                        {loading && <div className={styles.searchIcon}>
                             <SearchIcon />
-                        </div>
+                        </div>}
                     </div>
                 </div>
                 <div className={styles.signIn}>
                     <div className={styles.signInContent}>
-                    {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', marginTop: '10px', width: '100px' }} />}
+                        {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', marginTop: '10px', width: '100px' }} />}
                         {loading && <p>become a host</p>}
                         <div className={styles.languageIconContainer}>
-                            <LanguageIcon />
+                            {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', width: '40px', marginRight: '10px' }} />}
+                            {loading && <LanguageIcon />}
                         </div>
                         <span className={styles.navIcons}>
-                            <MenuIcon />
-                            <AccountCircleIcon color='gray' />
+                            {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', width: '40px', marginRight: '10px' }} />}
+                            {loading && <MenuIcon />}
+                            {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', width: '40px', marginRight: '10px' }} />}
+                            {loading && <AccountCircleIcon color='gray' />}
                         </span>
                     </div>
                 </div>
@@ -73,6 +79,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </section>
+            <Slider />
         </div>
     )
 }

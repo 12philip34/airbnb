@@ -20,12 +20,21 @@ const Footer = () => {
   }
 
   const [isOpen, setIsOpen] = useState(false);
+
+  
+  const [loading, setLoading] = useState(false);
+
+  setTimeout(() => {
+      setLoading(true);
+  }, 1000)
+
   return (
     <div className={styles.mainFooterContainer}>
       {isOpen && <FootersModal setIsOpen={setIsOpen} />}
       <section className={styles.dropUpFooter}>
         <div className={styles.dropUpBox}>
-          <div className={styles.contentOne}>
+        {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', width: '500px', marginRight: '10px' }} />}
+         {loading && <div className={styles.contentOne}>
             <span className={styles.airbnbInc}>© 2022 Airbnb, Inc.</span>
             <span className={styles.spanDot}>.</span>
             <span className={styles.privacy}>privacy</span>
@@ -35,15 +44,16 @@ const Footer = () => {
             <span className={styles.sitemap}>sitemap</span>
             <span className={styles.spanDot}>.</span>
             <span className={styles.destination}>destination</span>
-          </div>
-          <div className={styles.contentTwo}>
+          </div>}
+        {!loading && <LoaderSection extraStyles={{ height: '20px', borderRadius: '4px', width: '500px', marginLeft: '100px' }} />}
+         {loading && <div className={styles.contentTwo}>
             <span> <LanguageIcon style={footerIcon} className={styles.language}/> English(US)</span>
             <span> <AttachMoneyRoundedIcon style={footerIcon}  className={styles.dollar}/> USD</span>
             <span className={styles.support}>support & resources</span>
             <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
               <ExpandLessRoundedIcon style={upFooterArrow} />
             </button>
-          </div>
+          </div>}
         </div>
       </section>
       <div className={styles.footercontainer}>
