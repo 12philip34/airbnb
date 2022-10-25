@@ -14,7 +14,7 @@ h1 {
 
 .container {
     position: fixed;
-    top: 80px;
+    top: 70px;
     z-index: 1000;
     width: 100%;
     overflow: hidden;
